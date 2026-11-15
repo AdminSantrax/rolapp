@@ -1,0 +1,1 @@
+{"id":"dc982ccd-be5a-4115-98b8-00e7ec63f1d8","recipient":"b91b810e-928c-493c-ba7f-da11b9e7b0b1","sender":"system","priority":"MESSAGE_PRIORITY_HIGH","timestamp":"2026-11-15T02:54:07.064887400Z","content":"Subagent 499e96da-c5b4-4b78-8076-b3ac3580cd8e went idle without reporting anything back. Check its work, or send it a message at that id asking it to report back."}
