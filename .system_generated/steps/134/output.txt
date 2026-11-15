@@ -1,8 +1,0 @@
-Created At: 2026-11-15T03:54:15+01:00
-Completed At: 2026-11-15T03:54:19+01:00
-The search for "https://raw.githubusercontent.com/AdminSantrax/rolapp/main/style.css" returned the following summary:
-It looks like you have provided a direct raw URL to a stylesheet (`style.css`) inside a GitHub repository belonging to the user **AdminSantrax** within the **rolapp** project. 
-
-Because I am an AI text assistant, I cannot directly fetch or execute live raw code files from arbitrary GitHub repositories unless they are provided in context. However, if you are working on this project, experiencing an issue with this specific CSS file, or trying to achieve a particular styling effect (such as layout, colors, or responsiveness for your roleplay application/website), please share the code or describe what you need help with, and I'd be happy to assist you!
-
-Note: Source URLs are HTTP redirects; check where they resolve if you need the direct link.

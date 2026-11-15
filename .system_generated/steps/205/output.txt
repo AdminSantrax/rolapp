@@ -1,0 +1,4 @@
+Created At: 2026-11-15T04:19:31+01:00
+Completed At: 2026-11-15T04:19:32+01:00
+You have 1 background task(s) currently running:
+[{"taskId":"b91b810e-928c-493c-ba7f-da11b9e7b0b1/task-201","toolName":"run_command","toolSummary":"Deploy to gh-pages","description":"powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\jairo\\.gemini\\antigravity\\brain\\b91b810e-928c-493c-ba7f-da11b9e7b0b1\\Deploy.ps1\"","startTime":"2026-11-15T03:18:55Z","logUri":"file:///C:/Users/jairo/.gemini/antigravity/brain/b91b810e-928c-493c-ba7f-da11b9e7b0b1/.system_generated/tasks/task-201.log"}]

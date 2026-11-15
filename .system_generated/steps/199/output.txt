@@ -1,0 +1,17 @@
+Created At: 2026-11-15T04:18:47+01:00
+Completed At: 2026-11-15T04:18:51+01:00
+Command exited with code 0.
+
+Command output:
+
+> rolapp@0.1.0 build
+> vite build
+
+vite v5.4.21 building for production...
+<script src="./src/App.jsx"> in "/index.html" can't be bundled without type="module" attribute
+transforming...
+✓ 1 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html  1.04 kB │ gzip: 0.53 kB
+✓ built in 84ms

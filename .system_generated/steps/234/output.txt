@@ -1,0 +1,21 @@
+Created At: 2026-11-15T11:47:29+01:00
+Completed At: 2026-11-15T11:47:35+01:00
+Command exited with code 0.
+
+Command output:
+
+FullName                                                                                                               
+--------                                                                                                               
+C:\Users\jairo\.gemini\antigravity\brain\b91b810e-928c-493c-ba7f-da11b9e7b0b1\node_modules\@babel\core\src             
+C:\Users\jairo\.gemini\antigravity\brain\b91b810e-928c-493c-ba7f-da11b9e7b0b1\node_modules\@jridgewell\gen-mapping\src 
+C:\Users\jairo\.gemini\antigravity\brain\b91b810e-928c-493c-ba7f-da11b9e7b0b1\node_modules\@jridgewell\remapping\src   
+C:\Users\jairo\.gemini\antigravity\brain\b91b810e-928c-493c-ba7f-da11b9e7b0b1\node_modules\@jridgewell\sourcemap-cod...
+C:\Users\jairo\.gemini\antigravity\brain\b91b810e-928c-493c-ba7f-da11b9e7b0b1\node_modules\@jridgewell\trace-mapping...
+C:\Users\jairo\.gemini\antigravity\brain\b91b810e-928c-493c-ba7f-da11b9e7b0b1\node_modules\@react-three\fiber\dist\d...
+C:\Users\jairo\.gemini\antigravity\brain\b91b810e-928c-493c-ba7f-da11b9e7b0b1\node_modules\bootstrap\js\src            
+C:\Users\jairo\.gemini\antigravity\brain\b91b810e-928c-493c-ba7f-da11b9e7b0b1\node_modules\debug\src                   
+C:\Users\jairo\.gemini\antigravity\brain\b91b810e-928c-493c-ba7f-da11b9e7b0b1\node_modules\its-fine\src                
+C:\Users\jairo\.gemini\antigravity\brain\b91b810e-928c-493c-ba7f-da11b9e7b0b1\node_modules\react-use-measure\src       
+C:\Users\jairo\.gemini\antigravity\brain\b91b810e-928c-493c-ba7f-da11b9e7b0b1\node_modules\three\src                   
+
+

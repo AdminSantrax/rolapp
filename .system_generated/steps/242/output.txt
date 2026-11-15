@@ -1,0 +1,12 @@
+Created At: 2026-11-15T11:47:56+01:00
+Completed At: 2026-11-15T11:48:44+01:00
+Command exited with code 1.
+
+Command output:
+Get-ChildItem : No se encuentra ningún parámetro de posición que acepte el argumento '/s'.
+En línea: 1 Carácter: 95
++ ... ntigravity\brain\b91b810e-928c-493c-ba7f-da11b9e7b0b1'; dir src /b /s
++                                                             ~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+ 
