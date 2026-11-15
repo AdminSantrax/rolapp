@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { decode } from './lib/codec';
+import { validateImageUrl } from './lib/image.js';
 
 export const Page = ({ title, actions, children }) => (
   <div className="page">
@@ -16,6 +17,51 @@ export function Modal({ title, onClose, children }) {
         {children}
       </div>
     </div>
+  );
+}
+
+export function ImageUrlDialog({ title, onClose, onAccept, initialValue = '' }) {
+  const [url, setUrl] = useState(initialValue);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+  const submit = async (e) => {
+    e.preventDefault();
+    setBusy(true);
+    let validUrl;
+    try {
+      validUrl = await validateImageUrl(url);
+    } catch (err) {
+      setError(err.message);
+      setBusy(false);
+      return;
+    }
+    setBusy(false);
+    onAccept(validUrl);
+    onClose();
+  };
+  return (
+    <>
+      <Modal title={title} onClose={onClose}>
+        <form className="codebox" onSubmit={submit}>
+          <label className="field">
+            <span>Enlace directo a una imagen</span>
+            <input type="url" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://..." required autoFocus />
+          </label>
+          <p className="muted">Debe ser pública y permitir su exportación. Se comprobará antes de guardarla.</p>
+          <div className="row">
+            <button className="btn primary" type="submit" disabled={busy}>{busy ? 'Comprobando...' : 'Validar y usar imagen'}</button>
+            <button className="btn ghost" type="button" onClick={onClose}>Cancelar</button>
+          </div>
+        </form>
+      </Modal>
+      {error && (
+        <Modal title="No se puede usar esta imagen" onClose={() => setError('')}>
+          <p>No se guardó la imagen. No se podrá exportar junto con la ficha o el mapa y, por tanto, el enlace compartido no sería válido.</p>
+          <p className="muted">{error}</p>
+          <button className="btn" onClick={() => setError('')}>Entendido</button>
+        </Modal>
+      )}
+    </>
   );
 }
 

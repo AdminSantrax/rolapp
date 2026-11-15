@@ -1,10 +1,10 @@
 import { useRef, useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Stage, Layer, Rect, Ellipse, Line, Group, Circle, Text, Image as KImage } from 'react-konva';
-import { Modal, CodeBox } from '../components.jsx';
+import { Modal, CodeBox, ImageUrlDialog } from '../components.jsx';
 import { useStore, uid } from '../lib/storage.js';
 import { encode } from '../lib/codec.js';
-import { readImage, useImg } from '../lib/image.js';
+import { useImg } from '../lib/image.js';
 
 const CELL = 48, COLS = 48, ROWS = 32, R = CELL * 0.4;
 const COLORS = ['#e5484d', '#f59f3b', '#e8c547', '#4cc38a', '#3e8bff', '#8b6cff'];
@@ -59,7 +59,8 @@ export default function MapEditor() {
   const [poly, setPoly] = useState(null);
   const [sel, setSel] = useState(null);
   const [share, setShare] = useState(false);
-  const [withBg, setWithBg] = useState(false);
+  const [imageUrlOpen, setImageUrlOpen] = useState(false);
+  const [exportError, setExportError] = useState(false);
   const bgImg = useImg(m?.bg);
 
   useEffect(() => {
@@ -157,8 +158,15 @@ export default function MapEditor() {
     setSel(t.id);
   };
   const png = () => {
+    let data;
+    try {
+      data = stage.current.toDataURL({ pixelRatio: 2 });
+    } catch {
+      setExportError(true);
+      return;
+    }
     const a = document.createElement('a');
-    a.href = stage.current.toDataURL({ pixelRatio: 2 });
+    a.href = data;
     a.download = (m.name || 'mapa') + '.png';
     a.click();
   };
@@ -176,12 +184,7 @@ export default function MapEditor() {
       <header className="editor-bar">
         <Link className="btn ghost" to="/maps">Volver</Link>
         <input className="title-input" aria-label="Nombre del mapa" value={m.name} onChange={(e) => set({ name: e.target.value })} />
-        <label className="btn">Imagen de fondo
-          <input type="file" accept="image/*" hidden onChange={async (e) => {
-            const f = e.target.files[0]; e.target.value = '';
-            if (f) { try { set({ bg: await readImage(f, 2000, 0.75) }); } catch (er) { window.alert(er.message); } }
-          }} />
-        </label>
+        <button className="btn" onClick={() => setImageUrlOpen(true)}>{m.bg ? 'Cambiar fondo' : 'Imagen de fondo'}</button>
         {m.bg && <button className="btn ghost" onClick={() => set({ bg: '' })}>Quitar fondo</button>}
         <button className="btn" onClick={png}>Exportar PNG</button>
         <button className="btn primary" onClick={() => setShare(true)}>Compartir mapa</button>
@@ -266,8 +269,17 @@ export default function MapEditor() {
       </div>
       {share && (
         <Modal title="Compartir mapa" onClose={() => setShare(false)}>
-          <label className="check"><input type="checkbox" checked={withBg} onChange={(e) => setWithBg(e.target.checked)} /> Incluir imagen de fondo (el código será mucho más largo)</label>
-          <CodeBox code={encode('map', withBg ? m : { ...m, bg: '' })} hint="Las fichas del mapa se enlazan con las fichas de personaje por su identificador: quien no tenga esa ficha las verá como marcadores." />
+          <CodeBox code={encode('map', m.bg && !m.bg.startsWith('https://') ? { ...m, bg: '' } : m)}
+            hint={m.bg && !m.bg.startsWith('https://')
+              ? 'La imagen guardada antiguamente dentro del mapa se omite. Añade una URL HTTPS pública para compartirla. Las fichas se enlazan por su identificador.'
+              : 'Las imágenes se comparten mediante su URL. Las fichas del mapa se enlazan por su identificador: quien no tenga esa ficha las verá como marcadores.'} />
+        </Modal>
+      )}
+      {imageUrlOpen && <ImageUrlDialog title="Imagen de fondo" onClose={() => setImageUrlOpen(false)} onAccept={(bg) => set({ bg })} initialValue={m.bg?.startsWith('https://') ? m.bg : ''} />}
+      {exportError && (
+        <Modal title="No se puede exportar el mapa" onClose={() => setExportError(false)}>
+          <p>La imagen de fondo no permite exportar el mapa. El servidor puede haber cambiado sus permisos CORS desde que se validó la URL.</p>
+          <button className="btn" onClick={() => setExportError(false)}>Entendido</button>
         </Modal>
       )}
     </div>

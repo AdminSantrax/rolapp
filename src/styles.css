@@ -65,5 +65,4 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
 .portrait{display:flex;gap:1rem;align-items:center;margin-bottom:1rem}
 .portrait img,.portrait .ph{width:96px;height:96px;border-radius:10px;object-fit:cover;background:var(--panel2);display:grid;place-items:center;color:var(--muted);font-size:.8rem}
 .col{display:flex;flex-direction:column;gap:.4rem}
-.check{display:flex;gap:.5rem;align-items:center;color:var(--muted);font-size:.85rem;margin-bottom:.6rem}.check input{width:auto}
 @media (max-width:760px){.editor-body{flex-direction:column}.drawer{width:auto;max-height:35%;border-left:0;border-top:1px solid var(--line)}.tools{width:auto}}
