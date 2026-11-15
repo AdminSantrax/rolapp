@@ -1,0 +1,6 @@
+Created At: 2026-11-15T03:21:14+01:00
+Completed At: 2026-11-15T03:21:20+01:00
+Command exited with code 1.
+
+Command output:
+fatal: destination path 'rolapp' already exists and is not an empty directory.

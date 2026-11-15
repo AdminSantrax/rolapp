@@ -1,0 +1,10 @@
+Created At: 2026-11-15T03:26:09+01:00
+Completed At: 2026-11-15T03:26:12+01:00
+Command exited with code 0.
+
+Command output:
+
+unity-app\Assets\Editor\UIBuilderEditor.cs:10:    [MenuItem("Tales of Skyfall/Generate UI Hierarchy", false, 10)]
+unity-app\Assets\Editor\UIBuilderEditor.cs:11:    public static void GenerateUIHierarchy()
+
+

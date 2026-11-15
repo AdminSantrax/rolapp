@@ -1,0 +1,38 @@
+Created At: 2026-11-15T03:25:43+01:00
+Completed At: 2026-11-15T03:25:46+01:00
+Command exited with code 0.
+
+Command output:
+
+FullName                                                                                                Length Extensio
+                                                                                                               n       
+--------                                                                                                ------ --------
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git                                        .git    
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks                                          
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\info                                           
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\objects                                        
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\refs                                           
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\config                          297            
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\description                     73             
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\HEAD                            21             
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\applypatch-msg.sample     478    .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\commit-msg.sample         896    .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\fsmonitor-watchman.sample 4726   .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\post-update.sample        189    .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\pre-applypatch.sample     424    .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\pre-commit.sample         1649   .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\pre-merge-commit.sample   416    .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\pre-push.sample           1374   .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\pre-rebase.sample         4898   .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\pre-receive.sample        544    .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\prepare-commit-msg.sample 1492   .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\push-to-checkout.sample   2783   .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\sendemail-validate.sample 2308   .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\hooks\update.sample             3650   .sample 
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\info\exclude                    240            
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\objects\info                                   
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\objects\pack                                   
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\refs\heads                                     
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\.git\refs\tags                                      
+
+

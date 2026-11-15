@@ -1,0 +1,17 @@
+Created At: 2026-11-15T03:26:16+01:00
+Completed At: 2026-11-15T03:26:18+01:00
+Command exited with code 0.
+
+Command output:
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\unity-app\Assets\Scripts\Controllers\Bootstrapper.cs
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\unity-app\Assets\Scripts\Controllers\SpriteAnimator.cs
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\unity-app\Assets\Scripts\Network\ApiClient.cs
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\unity-app\Assets\Scripts\UI\Views\ArenaView.cs
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\unity-app\Assets\Scripts\UI\Views\LoginView.cs
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\unity-app\Assets\Scripts\UI\Views\RosterView.cs
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\unity-app\Assets\Scripts\UI\Views\ShopView.cs
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\unity-app\Assets\Scripts\UI\Views\SummonView.cs
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\unity-app\Assets\Scripts\UI\Views\VillaView.cs
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\unity-app\Assets\Scripts\UI\LocalizationManager.cs
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\unity-app\Assets\Scripts\UI\UIManager.cs
+C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\unity-app\Assets\Scripts\UI\VillaInteractable.cs

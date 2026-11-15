@@ -1,0 +1,14 @@
+Created At: 2026-11-15T03:25:38+01:00
+Completed At: 2026-11-15T03:25:41+01:00
+Command exited with code 1.
+
+Command output:
+Get-Content : No se encuentra la ruta de acceso 
+'C:\Users\jairo\.gemini\antigravity\playground\ethereal-void\rolapp\README.md' porque no existe.
+En línea: 1 Carácter: 1
++ Get-Content -Path .\\rolapp\\README.md -Raw | Write-Output
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\jairo\...olapp\README.md:String) [Get-Content], ItemNotFoundEx 
+   ception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+ 
