@@ -6,9 +6,9 @@ const read = (k) => {
   try { const v = JSON.parse(localStorage.getItem(k)); return Array.isArray(v) ? v : []; }
   catch { return []; }
 };
-
 const write = (k, v) => {
-  try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* sin espacio */ }
+  try { localStorage.setItem(k, JSON.stringify(v)); }
+  catch { window.alert('No se pudo guardar: el navegador se ha quedado sin espacio. Quita imágenes grandes.'); }
 };
 
 // Lista persistente en localStorage. Escribe al instante; save() actualiza la fecha, put() la conserva.
@@ -29,7 +29,7 @@ export const validSheet = (d) => isObj(d) && typeof d.id === 'string' && typeof 
 export const validMap = (d) => isObj(d) && typeof d.id === 'string' && typeof d.name === 'string'
   && ['rooms', 'walls', 'tokens'].every((k) => Array.isArray(d[k]));
 
-// Fusiona un elemento importado: la versión más reciente gana, pidiendo confirmación.
+// Fusiona un elemento importado. Si el código no trae imagen, conserva la que ya tenías.
 export function mergeIn(store, data, valid) {
   if (!valid(data)) throw new Error('El código no contiene datos válidos.');
   const cur = store.items.find((x) => x.id === data.id);
@@ -40,6 +40,8 @@ export function mergeIn(store, data, valid) {
       : `Ya tienes "${cur.name}". ¿Actualizarla con el código?`;
     if (!window.confirm(msg)) return false;
   }
-  store.put({ ...data, updatedAt: incoming || Date.now() });
+  const merged = { ...data, updatedAt: incoming || Date.now() };
+  for (const k of ['img', 'bg']) if (!merged[k] && cur?.[k]) merged[k] = cur[k];
+  store.put(merged);
   return true;
 }

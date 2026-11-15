@@ -50,3 +50,20 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none}
 .canvas.t-pan{cursor:grab}.canvas.t-room,.canvas.t-wall,.canvas.t-token{cursor:crosshair}.canvas.t-erase{cursor:not-allowed}
 @media (max-width:760px){.shell{grid-template-columns:1fr;grid-template-rows:auto 1fr}.side{flex-direction:row;align-items:center;padding:.6rem}.brand{padding:0 .6rem 0 0}.brand small{display:none}
 .grid2{grid-template-columns:1fr}.page{padding:1rem}.editor-body{grid-template-columns:1fr;grid-template-rows:auto 1fr}.tools{flex-direction:row;flex-wrap:wrap;border-right:0;border-bottom:1px solid var(--line)}}
+.editor-body{display:flex}
+.tools{width:150px;flex:none;overflow:auto}
+.canvas{flex:1}.canvas:focus{outline:none}
+.drawer{width:260px;flex:none;background:#0f131b;border-left:1px solid var(--line);padding:.8rem;overflow:auto;display:flex;flex-direction:column;gap:.5rem}
+.drawer h3{margin:0 0 .2rem;font-size:1rem}
+.dsheet{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:.4rem .6rem;cursor:grab}
+.dsheet summary{cursor:pointer;display:flex;align-items:center;gap:.5rem}
+.dstats{display:grid;grid-template-columns:1fr 1fr;gap:.2rem .6rem;font-size:.85rem;margin-top:.5rem;color:var(--muted)}
+.av{width:28px;height:28px;border-radius:50%;object-fit:cover;background:var(--panel2);flex:none}
+.seltok{border-top:1px solid var(--line);padding-top:.7rem;margin-top:auto;display:flex;flex-direction:column;gap:.4rem}
+.swatches{display:flex;gap:.3rem;margin-top:.6rem;flex-wrap:wrap}
+.sw{width:24px;height:24px;border-radius:50%;border:2px solid transparent;cursor:pointer;padding:0}.sw.on{border-color:#fff}
+.portrait{display:flex;gap:1rem;align-items:center;margin-bottom:1rem}
+.portrait img,.portrait .ph{width:96px;height:96px;border-radius:10px;object-fit:cover;background:var(--panel2);display:grid;place-items:center;color:var(--muted);font-size:.8rem}
+.col{display:flex;flex-direction:column;gap:.4rem}
+.check{display:flex;gap:.5rem;align-items:center;color:var(--muted);font-size:.85rem;margin-bottom:.6rem}.check input{width:auto}
+@media (max-width:760px){.editor-body{flex-direction:column}.drawer{width:auto;max-height:35%;border-left:0;border-top:1px solid var(--line)}.tools{width:auto}}

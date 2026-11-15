@@ -3,6 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Page, Modal, CodeBox, ImportBox } from '../components.jsx';
 import { useStore, mergeIn, validSheet } from '../lib/storage.js';
 import { encode } from '../lib/codec.js';
+import { readImage } from '../lib/image.js';
 
 const CLEARANCES = ['Infrarrojo', 'Rojo', 'Naranja', 'Amarillo', 'Verde', 'Azul', 'Índigo', 'Violeta', 'Ultravioleta'];
 const Field = ({ label, children }) => <label className="field"><span>{label}</span>{children}</label>;
@@ -12,6 +13,7 @@ export default function SheetEditor() {
   const nav = useNavigate();
   const store = useStore('rol.sheets');
   const [modal, setModal] = useState(null);
+  const [withImg, setWithImg] = useState(false);
   const s = store.items.find((x) => x.id === id);
   if (!s) return <Page title="Ficha no encontrada" actions={<Link className="btn" to="/sheets">Volver a fichas</Link>} />;
   const set = (p) => store.save({ ...s, ...p });
@@ -34,6 +36,18 @@ export default function SheetEditor() {
       <div className="grid2">
         <section className="panel">
           <h2>Identidad</h2>
+          <div className="portrait">
+            {s.img ? <img src={s.img} alt="Retrato" /> : <div className="ph">Sin imagen</div>}
+            <div className="col">
+              <label className="btn">Subir imagen
+                <input type="file" accept="image/*" hidden onChange={async (e) => {
+                  const f = e.target.files[0]; e.target.value = '';
+                  if (f) { try { set({ img: await readImage(f, 160, 0.8) }); } catch (er) { window.alert(er.message); } }
+                }} />
+              </label>
+              {s.img && <button className="btn ghost" onClick={() => set({ img: '' })}>Quitar</button>}
+            </div>
+          </div>
           <Field label="Nombre"><input {...txt('name')} /></Field>
           <Field label="Clon"><input placeholder="Ej.: Pepe-R-ABC-3" {...txt('clone')} /></Field>
           <Field label="Autorización">
@@ -62,7 +76,8 @@ export default function SheetEditor() {
       <div className="row end"><button className="btn danger" onClick={del}>Borrar ficha</button></div>
       {modal === 'out' && (
         <Modal title="Compartir ficha" onClose={() => setModal(null)}>
-          <CodeBox code={encode('sheet', s)} hint="Envía este código por chat. Quien lo importe recibirá la ficha tal como está ahora. Si cambias algo, vuelve a copiar el código." />
+          <label className="check"><input type="checkbox" checked={withImg} onChange={(e) => setWithImg(e.target.checked)} /> Incluir imagen (el código será mucho más largo)</label>
+          <CodeBox code={encode('sheet', withImg ? s : { ...s, img: '' })} hint="Envía este código por chat. Quien lo importe recibirá la ficha tal como está ahora. Si cambias algo, vuelve a copiar el código." />
         </Modal>
       )}
       {modal === 'in' && (
